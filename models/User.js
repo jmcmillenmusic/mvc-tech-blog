@@ -35,6 +35,14 @@ User.init(
         len: [8],
       },
     },
+    posts: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    comments: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    }
   },
   {
     hooks: {
