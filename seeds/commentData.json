@@ -1,0 +1,20 @@
+[
+  {
+    "content": "No kidding! Why did I make this distinction before? Thanks for the clarification!",
+    "post_id": 2,
+    "user_id": 1,
+    "date_created": "05/18/2022"
+  },
+  {
+    "content": "This makes so much sense! Now, I don't have to worry about giant files with 400 lines of code anymore.",
+    "post_id": 1,
+    "user_id": 3,
+    "date_created": "05/18/2022"
+  },
+  {
+    "content": "I was hoping for a workaround to having to type all those nit-picky SQL commands, and I think I've found it.",
+    "post_id": 3,
+    "user_id": 2,
+    "date_created": "05/18/2022"
+  }
+]
