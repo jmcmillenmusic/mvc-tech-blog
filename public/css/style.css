@@ -1,3 +1,10 @@
+:root {
+  --dark-green: #40514E;
+  --mid-teal: #11999E;
+  --evergreen: #30E3CA;
+  --sea-green: #E4F9F5;
+}
+
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
