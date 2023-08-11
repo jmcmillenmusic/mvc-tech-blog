@@ -15,6 +15,11 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
     post_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -30,11 +35,6 @@ Comment.init(
         model: 'user',
         key: 'id',
       },
-    },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
     }
   },
   {

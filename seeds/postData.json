@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Why MVC is so Important",
+    "content": "MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the View layer for design, and the Controller layer for application logic.",
+    "user_id": 2,
+    "date_created": "04/01/2022"
+  },
+  {
+    "title": "Authentication vs. Authorization",
+    "content": "There is a different between authentication and authorization. Authentication means confirming your own identity whereas authorization means being allowed access to the system.",
+    "user_id": 3,
+    "date_created": "05/15/2022"
+  },
+  {
+    "title": "Object-Relational Mapping",
+    "content": "I have really loved learning about ORMs. It's really simplified the way I create queries in SQL.",
+    "user_id": 1,
+    "date_created": "06/21/2022"
+  }
+]

@@ -34,14 +34,6 @@ User.init(
       validate: {
         len: [8],
       },
-    },
-    posts: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
-    comments: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
     }
   },
   {
