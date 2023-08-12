@@ -54,6 +54,7 @@ router.get('/homepage', async (req, res) => {
   }
 });
 
+// Renders the selected post when the user clicks on its title
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
