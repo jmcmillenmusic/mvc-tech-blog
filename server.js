@@ -82,15 +82,3 @@ sequelize.sync({ force: false }).then(() => {
 // THEN I am signed out of the site
 // WHEN I am idle on the site for more than a set time
 // THEN I am able to view posts and comments but I am prompted to log in again before I can add, update, or delete posts
-
-// User to Post
-// A user can have many posts
-// A post can have only one user
-
-// Post to Comment
-// A post can have many comments
-// A comment can only have one post
-
-// User to Comment
-// A user can have many comments (through posts?)
-// A comment can only have one user (through posts?)
