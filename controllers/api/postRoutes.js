@@ -1,6 +1,23 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
+
+// The '/api/posts' endpoint
+router.get('/api/posts', (req, res) => res.json( { User, Post, Comment } ));
+
+// GET all users
+router.get('/', async (req, res) => {
+  try {
+    const postsData = await Post.findAll({
+      include: [{model: Comment}]
+    });
+    res.status(200).json(postsData);
+    // Testing purposes only
+    // console.info(`${req.method} request received`);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // CREATE a new post when a user is logged in
 router.post('/', withAuth, async (req, res) => {
