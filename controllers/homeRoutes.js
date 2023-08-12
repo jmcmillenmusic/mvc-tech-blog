@@ -54,6 +54,7 @@ router.get('/homepage', async (req, res) => {
   }
 });
 
+// Renders the selected post when the user clicks on its title
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -69,10 +70,11 @@ router.get('/post/:id', async (req, res) => {
       ],
     });
 
-    const post = postData.get({ plain: true });
+    // Serialize data so the template can read it
+    const post = postData.map((post) => post.get({ plain: true }));
 
     res.render('post', {
-      ...post,
+      ...posts,
       logged_in: req.session.logged_in
     });
   } catch (err) {

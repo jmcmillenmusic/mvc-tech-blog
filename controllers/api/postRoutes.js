@@ -5,13 +5,31 @@ const withAuth = require('../../utils/auth');
 // The '/api/posts' endpoint
 router.get('/api/posts', (req, res) => res.json( { User, Post, Comment } ));
 
-// GET all users
+// GET all posts
 router.get('/', async (req, res) => {
   try {
     const postsData = await Post.findAll({
       include: [{model: Comment}]
     });
     res.status(200).json(postsData);
+    // Testing purposes only
+    // console.info(`${req.method} request received`);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// GET one post by 'id'
+router.get('/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [{ model: User }, {model: Comment}]
+    });
+    if (!postData) {
+      res.status(404).json({ message: 'No post with this id!' });
+      return;
+    }
+    res.status(200).json(postData);
     // Testing purposes only
     // console.info(`${req.method} request received`);
   } catch (err) {

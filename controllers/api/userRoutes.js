@@ -30,7 +30,7 @@ router.get('/:id', async (req, res) => {
     }
     res.status(200).json(userData);
     // Testing purposes only
-    console.info(`${req.method} request received`);
+    // console.info(`${req.method} request received`);
   } catch (err) {
     res.status(500).json(err);
   }
