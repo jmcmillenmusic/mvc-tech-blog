@@ -5,7 +5,28 @@
   --sea-green: #E4F9F5;
 }
 
-header, .project:not(:last-child) {
+body {
+  background-color: #40514E;
+}
+
+nav {
+  background-color: #11999E;
+  width: 100%;
+}
+
+li {
+  display: inline;
+}
+
+a {
+  color: #30E3CA;
+}
+
+a:hover {
+  color: #E4F9F5;
+}
+
+/* header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
@@ -28,4 +49,4 @@ header, .project:not(:last-child) {
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
-}
+} */
