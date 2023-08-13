@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth');
 // The '/api/comments' endpoint
 router.get('/api/comments', (req, res) => res.json( { User, Post, Comment } ));
 
-// GET all users
+// GET all comments
 router.get('/', async (req, res) => {
   try {
     const commentsData = await Comment.findAll({

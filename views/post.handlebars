@@ -1,11 +1,22 @@
-{{#each posts as |post| }}
 <div class="row mb-4 text-light">
   <div class="col-md-12">
-    <h2 >
+    <h2>
       <a href="/post/{{post.id}}">{{post.title}}</a>
     </h2>
     <p>{{post.content}}</p>
     <p>Written by {{post.user.name}} on {{format_date post.date_created}}</p>
+    {{#if logged_in}}
+    <div class="form-group">
+      <label for="addComment">Comment</label>
+      <textarea class="form-control" id="addComment" rows="2"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+    {{/if}}
+    <h3>
+      Comments:
+    </h3>
+    {{#each comments as |comment|}}
+    <p>{{post.comment.content}}</p>
+    {{/each}}
   </div>
 </div>
-{{/each}}
