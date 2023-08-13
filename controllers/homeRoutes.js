@@ -72,9 +72,39 @@ router.get('/post/:id', async (req, res) => {
 
     // Serialize data so the template can read it
     const post = postData.get({ plain: true });
+    // console.log(post);
 
     res.render('post', {
-      ...post,
+      post,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Renders the selected post when the user clicks on its title
+router.get('/', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+        {
+          model: Comment,
+          // include: [User],
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const post = postData.get({ plain: true });
+    console.log(post);
+
+    res.render('post', {
+      post,
       logged_in: req.session.logged_in
     });
   } catch (err) {
