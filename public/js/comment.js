@@ -1,8 +1,8 @@
 const commentButtonHandler = async (event) => {
   event.preventDefault();
 
-  const content = document.querySelector('.commentText');
-  const post_id = document.querySelector('.commentText').dataset.post_id;
+  const content = document.querySelector('textarea[name="commentText"]').value;
+  const post_id = document.querySelector('input[name="post-id"]').value;
   const date_created = new Date().toLocaleDateString();
 
   if (content && post_id && date_created) {

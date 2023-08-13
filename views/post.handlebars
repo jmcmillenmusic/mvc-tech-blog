@@ -7,8 +7,9 @@
     <p>Written by {{post.user.name}} on {{format_date post.date_created}}</p>
     {{#if logged_in}}
     <div class="form-group">
+      <input type="hidden" name="post-id" value="{{post.id}}" />
       <label for="addComment">Comment:</label>
-      <textarea class="form-control commentText" rows="2"></textarea>
+      <textarea name="commentText" class="form-control commentText" rows="2"></textarea>
     </div>
     <button type="submit" id="addComment" class="btn btn-success">Submit</button>
     {{/if}}
