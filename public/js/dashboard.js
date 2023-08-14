@@ -1,14 +1,16 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const postTitle = document.querySelector('input[name="post-title"]').value;
-  const postContent = document.querySelector('input[name="post-content"]').value;
+  const title = document.querySelector('input[name="post-title"]').value;
+  const content = document.querySelector('input[name="post-content"]').value;
   const date_created = new Date().toLocaleDateString();
+  console.log('title', title);
+  console.log('postContent', content);
 
-  if (postTitle && postContent && date_created) {
+  if (title && content) {
     const response = await fetch(`/api/posts`, {
       method: 'POST',
-      body: JSON.stringify({ postTitle, postContent, date_created }),
+      body: JSON.stringify({ title, content, date_created }),
       headers: {
         'Content-Type': 'application/json',
       },
