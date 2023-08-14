@@ -1,13 +1,14 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const postTitle = document.querySelector('input[name="post-title"]').value.trim();
-  const postContent = document.querySelector('input[name="post-content"]').value.trim();
+  const postTitle = document.querySelector('input[name="post-title"]').value;
+  const postContent = document.querySelector('input[name="post-content"]').value;
+  const date_created = new Date().toLocaleDateString();
 
-  if (postTitle && postContent) {
+  if (postTitle && postContent && date_created) {
     const response = await fetch(`/api/posts`, {
       method: 'POST',
-      body: JSON.stringify({ postTitle, postContent }),
+      body: JSON.stringify({ postTitle, postContent, date_created }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -38,9 +39,8 @@ const delButtonHandler = async (event) => {
 };
 
 document
-  .querySelector('.new-post-form')
+  .querySelector('#newPostButton')
   .addEventListener('submit', newFormHandler);
-
 
 document
   .querySelectorAll('#deletePostButton').forEach(button => {
