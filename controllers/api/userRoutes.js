@@ -36,6 +36,24 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// GET one user and return all posts from this user
+router.get('/loggedin', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      include: [{ model: Post }, {model: Comment}]
+    });
+    if (!userData) {
+      res.status(404).json({ message: 'No user with this id!' });
+      return;
+    }
+    res.status(200).json(userData);
+    // Testing purposes only
+    // console.info(`${req.method} request received`);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // CREATE new user?
 router.post('/', async (req, res) => {
   try {

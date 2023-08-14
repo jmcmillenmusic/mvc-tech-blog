@@ -1,8 +1,8 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="post-title"]').value;
-  const content = document.querySelector('input[name="post-content"]').value;
+  const title = document.querySelector('#post-title').value;
+  const content = document.querySelector('#post-content').value;
   const date_created = new Date().toLocaleDateString();
   console.log('title', title);
   console.log('postContent', content);
@@ -18,6 +18,7 @@ const newFormHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace('/dashboard');
+      console.log(response);
     } else {
       alert('Failed to create project');
     }
@@ -41,7 +42,7 @@ const delButtonHandler = async (event) => {
 };
 
 document
-  .querySelector('#newPostButton')
+  .querySelector('.new-post-form')
   .addEventListener('submit', newFormHandler);
 
 document
