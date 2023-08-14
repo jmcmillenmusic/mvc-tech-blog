@@ -120,7 +120,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       include: [{ model: Post }],
     });
-
+    console.log(userData);
     const user = userData.get({ plain: true });
 
     res.render('dashboard', {

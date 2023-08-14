@@ -40,6 +40,7 @@ router.get('/:id', async (req, res) => {
 // CREATE a new post when a user is logged in
 router.post('/', withAuth, async (req, res) => {
   try {
+    console.log(req.body);
     const newPost = await Post.create({
       ...req.body,
       user_id: req.session.user_id,
