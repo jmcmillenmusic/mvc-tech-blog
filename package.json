@@ -8,5 +8,18 @@
     "express-session": "^1.17.3",
     "mysql2": "^3.6.0",
     "sequelize": "^6.32.1"
-  }
+  },
+  "scripts": {
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "quicksave": "git add . && git commit -m \"quicksave\" && git push"
+  },
+  "name": "mvc-tech-blog",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
