@@ -27,49 +27,50 @@ const newFormHandler = async (event) => {
 const startUpdateHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
-    // console.log(id);
 
     const response = await fetch(`/api/posts/${id}`, {
       method: 'GET',
     });
-    
-    // console.log(response);
-    console.log(response.posts[0]);
 
-    if (response.ok) {
-      document.location.replace('/dashboard');
+    if (response.ok) {  
+    const updateTitleField = document.querySelector('#update-title');
+    const updateContentField = document.querySelector('#update-content');
+    const updatePost = await response.json();
+    // console.log(updatePost);
+    updateTitleField.value = updatePost.title;
+    updateContentField.value = updatePost.content;
     } else {
       alert('Failed to start updating post');
     }
   }
 };
 
-// Function that allows user to update a post
-const updateFormHandler = async (event) => {
-  event.preventDefault();
+// // Function that allows user to update a post
+// const updateFormHandler = async (event) => {
+//   event.preventDefault();
 
-  const title = document.querySelector('#post-title').value;
-  const content = document.querySelector('#post-content').value;
-  const date_created = new Date().toLocaleDateString();
+//   const title = document.querySelector('#post-title').value;
+//   const content = document.querySelector('#post-content').value;
+//   const date_created = new Date().toLocaleDateString();
   
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+//   if (event.target.hasAttribute('data-id')) {
+//     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/posts/${id}`, {
-      method: 'PUT',
-      body: JSON.stringify({ title, content, date_created }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+//     const response = await fetch(`/api/posts/${id}`, {
+//       method: 'GET',
+//       body: JSON.stringify({ title, content, date_created }),
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//     });
 
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert('Failed to update post');
-    }
-  }
-};
+//     if (response.ok) {
+//       document.location.replace('/dashboard');
+//     } else {
+//       alert('Failed to update post');
+//     }
+//   }
+// };
 
 // Function that allows user to delete a post
 const delButtonHandler = async (event) => {
@@ -99,9 +100,9 @@ document
   .addEventListener('click', startUpdateHandler);
 
 // Allows user to finish updating a post
-document
-  .querySelector('.updating-post-form')
-  .addEventListener('submit', updateFormHandler);
+// document
+//   .querySelector('.updating-post-form')
+//   .addEventListener('submit', updateFormHandler);
 
 // Allows user to delete a post
 document
