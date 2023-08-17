@@ -35,11 +35,12 @@ const startUpdateHandler = async (event) => {
     if (response.ok) {  
       const updateTitleField = document.querySelector('#update-title');
       const updateContentField = document.querySelector('#update-content');
-      // let updatePostId = document.querySelector('#post-id').value;
+      
       const updatePost = await response.json();
+      
       updateTitleField.value = updatePost.title;
       updateContentField.value = updatePost.content;
-      // updatePostId = id;
+      
     } else {
       alert('Failed to start updating post');
     }

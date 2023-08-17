@@ -12,8 +12,6 @@ router.get('/', async (req, res) => {
       include: [{model: Comment}]
     });
     res.status(200).json(postsData);
-    // Testing purposes only
-    // console.info(`${req.method} request received`);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -30,8 +28,6 @@ router.get('/:id', async (req, res) => {
       return;
     }
     res.status(200).json(postData);
-    // Testing purposes only
-    // console.info(`${req.method} request received`);
   } catch (err) {
     res.status(500).json(err);
   }

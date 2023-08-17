@@ -4,6 +4,7 @@
   </div>
 </div>
 
+{{!-- Section where the user can write new posts --}}
 <div class="row mt-4 text-light">
   <div class="col-md-6">
     <h3>Write a New Post:</h3>
@@ -22,6 +23,7 @@
       </div>
     </form>
 
+    {{!-- Displays the section below if the user has created at least 1 post --}}
     {{#if posts.length}}
     {{#each posts as |post|}}
     <h3>Update an Existing Post:</h3>
@@ -44,6 +46,7 @@
     {{/if}}
   </div>
   
+  {{!-- Displays all of the user's posts with options to update or delete them --}}
   <div class="col-md-6 post-list">
     <h3>Current Posts:</h3>
     {{#if posts.length}}

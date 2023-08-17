@@ -1,10 +1,12 @@
 <div class="row mb-4 text-light">
   <div class="col-md-12">
+    {{!-- Displays a selected post (no login required to view) --}}
     <h2>
       <a href="/post/{{post.id}}">{{post.title}}</a>
     </h2>
     <p>{{post.content}}</p>
     <p>Written by {{post.user.name}} on {{format_date post.date_created}}</p>
+    {{!-- Can only add comments when the user is logged in --}}
     {{#if logged_in}}
     <div class="form-group">
       <input type="hidden" name="post-id" value="{{post.id}}" />
