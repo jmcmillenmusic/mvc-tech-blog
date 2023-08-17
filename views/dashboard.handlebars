@@ -22,21 +22,26 @@
       </div>
     </form>
 
+    {{#if posts.length}}
+    {{#each posts as |post|}}
     <h3>Update an Existing Post:</h3>
 
     <form class="form updating-post-form">
+      <input type="hidden" name="post-id" id="post-id" value="{{post.id}}" />
       <div class="form-group">
-        <label for="post-title">Post Title:</label>
+        <label for="update-title">Post Title:</label>
         <input class="form-input" type="text" id="update-title" name="update-title" />
       </div>
       <div class="form-group">
-        <label for="post-content">Content:</label>
+        <label for="update-content">Content:</label>
         <textarea class="form-input" id="update-content" name="update-content"></textarea>
       </div>
       <div class="form-group">
-        <button id="updatePostButton" type="submit" class="btn btn-warning">Update</button>
+        <button id="updatePostButton" type="submit" class="btn btn-warning" data-id="{{post.id}}">Update</button>
       </div>
     </form>
+    {{/each}}
+    {{/if}}
   </div>
   
   <div class="col-md-6 post-list">

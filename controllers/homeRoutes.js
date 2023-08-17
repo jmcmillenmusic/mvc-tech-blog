@@ -72,7 +72,6 @@ router.get('/post/:id', async (req, res) => {
 
     // Serialize data so the template can read it
     const post = postData.get({ plain: true });
-    // console.log(post);
 
     res.render('post', {
       post,
@@ -101,7 +100,6 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const post = postData.get({ plain: true });
-    console.log(post);
 
     res.render('post', {
       post,
@@ -121,7 +119,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
       include: [{ model: Post }],
     });
     const user = userData.get({ plain: true });
-    console.log(user);
 
     res.render('dashboard', {
       ...user,
