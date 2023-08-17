@@ -7,7 +7,7 @@ As a true full-stack web developer, it's important that I'm able to understand t
 ## Installation
 
 You can find the tech blog on Heroku at the link below:
-[INSERT HEROKU LINK HERE]
+https://jeff-mcmillen-tech-blog-f37a90b6c5d9.herokuapp.com/
 
 ## Usage
 
