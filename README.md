@@ -19,6 +19,8 @@ Once you're logged in, you'll have full access to the site. On the Homepage, whe
 
 When you click on the Dashboard, you'll be able to see all posts you've made on the right. To create a new post, fill out the Write a New Post form on the left and click Submit. You'll see the new post on the right. To delete one of your posts, click the Delete button to delete it and all comments on it. To update one of your posts, click on the Update button, and you'll see its title and content appear in the Update an Existing Post form below the New Post form. Make your changes in those fields and click on the Update button below to update your post.
 
+![screenshot](./screenshot.PNG)
+
 ## Credits
 
 N/A
