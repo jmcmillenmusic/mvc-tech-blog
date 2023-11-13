@@ -10,6 +10,7 @@
     "sequelize": "^6.32.1"
   },
   "scripts": {
+    "seed": "node seeds/seed.js",
     "start": "node server.js",
     "watch": "nodemon server.js",
     "quicksave": "git add . && git commit -m \"quicksave\" && git push"
